@@ -1,3 +1,7 @@
+"""
+Code written by Gaurav Mitra and team members
+used here with permission
+"""
 import time
 import hoomd
 import hoomd.md
