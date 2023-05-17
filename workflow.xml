@@ -1,0 +1,63 @@
+<tool id='wpc252_dlvo-workflow' name='wpc252_dlvo-workflow'>
+  <command interpreter='parsl'>main_dev.py</command>
+  <inputs>
+    <section name='Parameters' type='section' title='Parameters' expanded='true'>
+      <param name='lattice_repeats' label='lattice repeats' type='text' value='5 6' width='30%' help='lattice repeats: enter separated with space'>
+      </param>
+      <param name='lattice_spacing' label='lattice spacing' type='text' value='6.0 7.0 7.5' width='30%' help='lattice spacing: enter separated with space'>
+      </param>
+      <param name='fraction_positive' label='fraction of P particles in a unit cell' type='text' value='0.5' width='30%' help='fraction of Positive particles in a unit cell'>
+      </param>
+      <param name='radiusN' type='text' label='Radius N' value='105.0' width='30%'>
+      </param>
+      <param name='radiusP' type='text' label='Radius P' value='85.0' width='30%'>
+      </param>
+      <param name='debye_length' type='text' label='Debye length' value='5.25' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='seed' type='integer' label='Seed' value='10' width='30%'>
+      </param>
+      <param name='yaml_file' type='text' label='yaml file' value='inputs.yaml' width='30%'>
+      </param>
+      <param name='output_dir' type='text' label='output directory' value='binary_dlvo' help='indicate ouput directory for run' width='30%'>
+      </param>
+    </section>
+    <section name='OtherParameters' type='section' title='Other Parameters' expanded='false'>
+      <param name='brush_density' label='brush density' type='text' value='0.09' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='brush_length' label='brush length' type='text' value='10.0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='chargewall' label='chargewall' type='text' value='0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='closedwalls' label='closedwalls' type='text' value='True' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='dielectric_constant' label='dielectric constant' type='text' value='80.0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='dt' label='dt' type='text' value='0.005' width='30%' help='timestep'>
+      </param>
+      <param name='gamma' label='gamma' type='text' value='0.001' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='gravity' label='gravity' type='text' value='0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='lattice_type' label='lattice type' type='text' value='bcc' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='massN' label='massN' type='text' value=' ' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='massP' label='massP' type='text' value='1.0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='mode' label='mode' type='text' value='langevin' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='nsteps' label='nsteps' type='text' value='10000000' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='orbit_factor' label='orbit factor' type='text' value='1.3' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='surface_potentialN' label='surface potentialN' type='text' value='50' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='surface_potentialP' label='surface potentialP' type='text' value='50' width='30%' help='if multiple  enter separated with space'>
+      </param>
+      <param name='temperature' label='temperature' type='text' value='1.0' width='30%' help='if multiple  enter separated with space'>
+      </param>
+    </section>
+  </inputs>
+  <outputs>
+  </outputs>
+</tool>

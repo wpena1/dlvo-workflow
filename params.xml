@@ -1,0 +1,32 @@
+<section name='OtherParameters' type='section' title='Other Parameters' expanded='false'>
+	<param name='brush_density' label='brush density' type='text' value='0.09' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='brush_length' label='brush length' type='text' value='10.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='chargewall' label='chargewall' type='text' value='0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='closedwalls' label='closedwalls' type='text' value='True' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='debye_length' label='debye length' type='text' value='5.35' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='dielectric_constant' label='dielectric constant' type='text' value='80.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='dt' label='dt' type='text' value='0.005' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='fraction_positive' label='fraction positive' type='text' value='0.5' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='gamma' label='gamma' type='text' value='0.001' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='gpu' label='gpu' type='text' value='False' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='gravity' label='gravity' type='text' value='0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='inputfile' label='inputfile' type='text' value='' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='lattice_repeats' label='lattice repeats' type='text' value='5' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='lattice_spacing' label='lattice spacing' type='text' value='7.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='lattice_type' label='lattice type' type='text' value='bcc' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='massN' label='massN' type='text' value='' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='massP' label='massP' type='text' value='1.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='mode' label='mode' type='text' value='langevin' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='nsteps' label='nsteps' type='text' value='500000000' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='orbit_factor' label='orbit factor' type='text' value='1.3' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='outputprefix' label='outputprefix' type='text' value='' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='scale_by' label='scale by' type='text' value='' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='seed' label='seed' type='text' value='1' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='seed_file' label='seed file' type='text' value='' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='surface_potentialN' label='surface potentialN' type='text' value='-50' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='surface_potentialP' label='surface potentialP' type='text' value='50' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='radiusN' label='radiusN' type='text' value='105.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='radiusP' label='radiusP' type='text' value='85.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='temperature' label='temperature' type='text' value='1.0' width='30%' help='if multiple  enter separated with space'></param>
+	<param name='outputprefix' label='outputprefix' type='text' value='dlvo_RN{radiusN}_RP{radiusP}_fp{fraction_positive}_d{debye_length}_a{lattice_repeats}_lc{lattice_spacing}_s{seed}' width='30%' help='if multiple  enter separated with space'></param>
+</section>
