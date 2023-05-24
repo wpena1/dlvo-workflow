@@ -1,3 +1,5 @@
+# DLVO-WORKFLOW: Molecular Dynamics of DLVO Ions
+Workflow takes input from user and generates input files for various simulations having different parameters
 
 To run: 
         python3 -u run_parameter_sweep_dlvo.py [OPTIONS]
