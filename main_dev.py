@@ -1,13 +1,18 @@
 import parsl
 import os
 from parsl.app.app import python_app, bash_app
-from parsl.data_provider.files import File
-from path import Path
-from parslpw import pwconfig, pwargs
+print(parsl.__version__, flush = True)
 
-parsl.clear()
-parsl.load(pwconfig)
+# import parsl_utils stuff below
+import parsl_utils
+from parsl_utils.config import config, resource_labels, form_inputs
+from parsl_utils.data_provider import PWFile
 
+print("MAIN.py:...Configuring Parsl...")
+parsl.load(config)
+print("MAIN.py:...Parsl config loaded...")
+
+@parsl_utils.parsl_wrappers.log_app
 @bash_app
 def run_dlvo(inputs=[], outputs=[], stdout="run.out", stderr="run.err"):
     run_dir = inputs[0]
