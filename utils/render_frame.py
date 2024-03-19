@@ -8,7 +8,7 @@ def render_frame_gsd(frame_number, output_prefix):
     frame_number = int(frame_number)
     output_prefix = str(output_prefix)
     full_path = output_prefix+".gsd"
-    with gsd.hoomd.open(name=F"{full_path}", mode='rb') as gsd_file:
+    with gsd.hoomd.open(name=F"{full_path}", mode='r') as gsd_file:
         snap = gsd_file[frame_number]
 
     box = snap.configuration.box
