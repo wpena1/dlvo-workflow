@@ -41,8 +41,8 @@ if [ -z "$pw_conda_dir" ] || [ -z "$pw_conda_env" ]; then
 fi
 
 f_set_up_conda_from_yaml ${pw_conda_dir} ${pw_conda_env} ${pw_conda_yaml}
-#source ${pw_conda_dir}/etc/profile.d/conda.sh
-#conda activate ${pw_conda_env}
+source ${pw_conda_dir}/etc/profile.d/conda.sh
+conda activate ${pw_conda_env}
 
 # Required even if empty because it is copied from the prepare_remote_resource.sh script
 touch workflow_apps.py 
