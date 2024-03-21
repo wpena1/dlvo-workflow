@@ -1,3 +1,8 @@
+##########################
+# yaml sweep functions
+# input file is generated based on inputs indicated in xml file
+##########################
+
 
 def combine_arguments_dicts(input_dict, default_arguments):
     import itertools
@@ -17,17 +22,19 @@ def combine_arguments_dicts(input_dict, default_arguments):
         list_argument_dicts.append(param_dict)
     return list_argument_dicts
 
+
 def update_yaml(arg_dict, only_updated=False, new_yaml="inputs_new.yaml"):
     import yaml
     import os
     import copy
-    from path import Path
+
     with open(arg_dict['yaml_file']) as f:
         default_arguments = yaml.load(f, Loader=yaml.FullLoader)
 
     list_argument_dicts = combine_arguments_dicts(arg_dict, default_arguments)
     run_list = []
     all_params = []
+
     #do this to only use the ones being looped over:
     if only_updated is True:
         sweep_keys = sorted(list_argument_dicts[0].keys())
@@ -44,10 +51,12 @@ def update_yaml(arg_dict, only_updated=False, new_yaml="inputs_new.yaml"):
         new_params['outputprefix'] = new_params['outputprefix'].format_map(new_params)
         run_file = os.path.join(arg_dict['output_dir'],sweep_path.format_map(new_params),new_yaml)
         run_file_dir = os.path.dirname(run_file)
-        outputdir = os.path.join('.',run_file_dir)
+        output_dir = os.path.join('.',run_file_dir)
+    
         # print(F"YS run_file_dir: {run_file_dir} \n output_directory: {outputdir} \n path output dir: {Path(outputdir)}")
-        output = Path(outputdir)
-        os.makedirs(output, exist_ok=True)
+        # output = Path(outputdir)
+        print("yaml_sweep:....... output directory", output_dir)
+        os.makedirs(output_dir, exist_ok=True)
         # print(f"YS output: {output}")
         run_list.append(run_file)
         # os.makedirs(os.path.dirname(run_file),exist_ok=True)

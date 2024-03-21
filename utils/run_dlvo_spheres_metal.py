@@ -95,10 +95,9 @@ def screened_potential_shifted_force(r,rmin,rmax,radius_sum,steric_prefactor,ele
 
 if __name__=="__main__":
     import yaml
+    '''
     parser=argparse.ArgumentParser()
     #parser.add_argument("-i","--inputfile",default=None,help="Input file (gsd file, optional)",type=str)
-
-    '''
     parser.add_argument("--gpu",default=False,action="store_true")
     parser.add_argument("--closedwalls",default=False,help="Turn on closed walls along x/y/z directions (default: False)",action="store_true")
     parser.add_argument("--gravity",default=0.5,help="Turn on downward gravity constant force in z by setting to a positive number (default: 0)",type=float)
@@ -123,28 +122,24 @@ if __name__=="__main__":
     parser.add_argument("--dt",help="Simulation time step (default: %(default)s)",type=float,default=0.1)
     parser.add_argument("--seed_file",help="xyz file specifying some seed coordinates",default=None)
     parser.add_argument("--scale_by",default="max_diameter",help="Scale xyz by this (default: %(default)s), options: max_diameter, max_radius")
-    '''
     #parser.add_argument("-o","--outputprefix",help="Output prefix (required)",type=str,required=True)
     #parser.add_argument("-n","--nsteps",help="Number of steps to run",type=int,required=True)
     #parser.add_argument("-T","--temperature",help="Temperature at which to run, or list of tuples specifying annealing schedule",default="1.0")
     #parser.add_argument("-m","--mode",help="Integrator/dynamics scheme. Allowed: Minimize, Langevin, NVT (default: %(default)s)",default="Langevin")
-
-
     args = parser.parse_args()
     #locals().update(vars(args))
+    '''
 
-    ####################################################### Loading the yaml input file #################################################
-
+    print("Remote: Loading the yaml input file")
+    # running process must be in run directory
     with open ('inputs_new.yaml') as f:
             parameters = yaml.load(f,Loader=yaml.FullLoader)
-
-    #locals().update(vars(parameters))
     locals().update(parameters)
 
+    print("Remote: ======= ALL PARAMETERS =======")
+    print(parameters)
 
-
-    ##DECIDE WHETHER RUNNING ON GPU OR ON CPU
-
+    # DECIDE WHETHER RUNNING ON GPU OR ON CPU
     if gpu=='True':
         hoomd.context.initialize("--mode=gpu")
         print("Running on the GPU")
@@ -155,7 +150,6 @@ if __name__=="__main__":
     np.random.seed(parameters['seed'])
     expected_num_frames = 1000
     dump_frequency=int(nsteps/expected_num_frames)
-
 
     ##DEFINE ALL THE RELEVANT QUANTITIES
 
@@ -483,10 +477,11 @@ if __name__=="__main__":
 
     import clustering_analysis as CA
     filename = outputgsdfile
-    traj = gsd.hoomd.open(filename, "rb")
+    traj = gsd.hoomd.open(filename, "r")
     numsnap = len(traj)
     if numsnap >= expected_num_frames:
         analyze_results = CA.analyze_cluster(filename,203,outputprefix)
         figure_path = CA.plot_clustering_time(analyze_results[0], analyze_results[1], analyze_results[2], outputprefix)
     else:
         print("Looks like simulations did not reach completion")
+    sys.exit()

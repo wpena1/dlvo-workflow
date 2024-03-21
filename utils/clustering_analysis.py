@@ -40,7 +40,7 @@ def split_into_clusters(link_mat,thresh,n):
 
 def analyze_cluster(filename, cutoff, outputprefix):
 
-    traj = gsd.hoomd.open(filename, "rb")
+    traj = gsd.hoomd.open(filename, "r")
     numsnap = len(traj)
     gsdfile=os.path.basename(filename)
 
@@ -106,7 +106,7 @@ def plot_clustering_time(ts_list, max_cluster_size_list, num_cluster_list, outpu
     from mpl_toolkits.mplot3d import Axes3D
     matplotlib.rcParams['savefig.dpi'] = 300
     matplotlib.rcParams['lines.linewidth'] = 3.0
-    matplotlib.rcParams['font.family'] = 'Arial'
+    # matplotlib.rcParams['font.family'] = 'Arial'
     plt.rcParams['font.size'] = 20
     plt.rcParams['axes.linewidth'] = 3.0
     matplotlib.use('Agg')

@@ -5,3 +5,13 @@
 logs/
 parsl_utils/__pycache__
 parsl_utils/data_provider/__pycache__
+utils/path.py
+utils/params.xml
+utils/parslpw.py
+utils/path.py
+utils/launch_parsl.sbatch
+utils/amd_parsl_cfg.py
+utils/cpu_parsl_cfg.py
+utils/gen_xml.py
+utils/main_dev.py
+utils/dlvo_old.py
