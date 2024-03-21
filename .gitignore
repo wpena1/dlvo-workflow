@@ -15,3 +15,4 @@ utils/cpu_parsl_cfg.py
 utils/gen_xml.py
 utils/main_dev.py
 utils/dlvo_old.py
+utils/README_old

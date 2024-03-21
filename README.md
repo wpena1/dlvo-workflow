@@ -1,6 +1,8 @@
 # DLVO-WORKFLOW: Molecular Dynamics of DLVO Ions
-Workflow takes input from user and generates input files for various simulations having different parameters
-
+Workflow runs MD simulations of DLVO ions using the HOOMD Blue MD engine. 
+Workflow takes input from user and generates input files for various simulations
+having different parameters which results in different crystalization behavior
+key parameters include the list below
 To run: 
         python3 -u run_parameter_sweep_dlvo.py [OPTIONS]
 
