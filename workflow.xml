@@ -2,9 +2,9 @@
   <command interpreter='bash'>parsl_wrapper.sh</command>
   <inputs>
   <param name='pw_conda_yaml' label='PW Conda YAML Definition File' type='hidden' value='./requirements/conda_env_local.yml' width='50%_none'></param>
-    <param name='pw_conda_dir' label='PW Conda Directory' type='hidden' value='/home/wpc252/work/miniconda3' width='50%_none'></param>
-    <param name='pw_conda_env' label='PW Conda Environment Name' type='hidden' value='hoomd2' width='50%_none'></param> 
-    <section name='pwrl_host1' type='section' title='Compute Cluster' expanded='true'>
+  <param name='pw_conda_dir' label='PW Conda Directory' type='hidden' value='/home/wpc252/work/miniconda3' width='50%_none'></param>
+  <param name='pw_conda_env' label='PW Conda Environment Name' type='hidden' value='hoomd2' width='50%_none'></param> 
+  <section name='pwrl_host1' type='section' title='Compute Cluster' expanded='true'>
       <param name='resource' type='computeResource' label='Compute cluster where job will be executed' hideUserWorkspace='true' help='Cluster to run simulation. Select a resource from drop down menu'></param>
       <param name='nports' label='Number of Ports to Reserve' type='hidden' value='2' width='50%_none'></param>
       <param name='worker_conda_yaml' label='Worker Conda YAML Definition File' type='hidden' value='./requirements/conda_env_remote.yml' width='50%_none'></param>
@@ -29,7 +29,7 @@
                  value='-l walltime=01:00:00;-l nodes=1;-l naccesspolicy=SINGLEJOB -n' width='100%_none'></param>
         </when>
       </conditional>
-    </section> 
+  </section> 
     <section name='Parameters' type='section' title='Simulation Parameters' expanded='true'>
       <param name='lattice_repeats' label='lattice repeats' type='text' value='5 6' width='30%' help='lattice repeats: enter separated with space'>
       </param>
@@ -48,6 +48,8 @@
       <param name='yaml_file' type='text' label='yaml file' value='inputs.yaml' width='30%'>
       </param>
       <param name='output_dir' type='text' label='output directory' value='binary_dlvo' help='indicate ouput directory for run' width='30%'>
+      </param>
+      <param name='nsteps' label='nsteps' type='text' value='10000000' width='30%' help='number of steps for simulation'>
       </param>
     </section>
     <section name='OtherParameters' type='section' title='Other Parameters' expanded='false'>
@@ -74,8 +76,6 @@
       <param name='massP' label='massP' type='text' value='1.0' width='30%' help='if multiple  enter separated with space'>
       </param>
       <param name='mode' label='mode' type='text' value='langevin' width='30%' help='if multiple  enter separated with space'>
-      </param>
-      <param name='nsteps' label='nsteps' type='text' value='10000000' width='30%' help='if multiple  enter separated with space'>
       </param>
       <param name='orbit_factor' label='orbit factor' type='text' value='1.3' width='30%' help='if multiple  enter separated with space'>
       </param>
