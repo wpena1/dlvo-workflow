@@ -1,8 +1,10 @@
-##########################
+#====================================
+# 
+# Code written by Gaurav Mitra and team members
+# used here with permission
 # yaml sweep functions
 # input file is generated based on inputs indicated in xml file
-##########################
-
+#====================================
 
 def combine_arguments_dicts(input_dict, default_arguments):
     import itertools

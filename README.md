@@ -10,7 +10,7 @@ The workflow is orchestrated with the
 
 Key parameters editable in the xml form include the list below.
 
-Parameter Options:
+## Parameter Options:
 
 	lattice_repeats: Times to replicate the system in each direction
 	lattice_spacing: Lattice spacing in terms of positive particle diameter 	

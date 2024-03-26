@@ -1,3 +1,9 @@
+#====================================
+# 
+# Code written by Gaurav Mitra and team members
+# used here with permission
+#
+#====================================
 from scipy.spatial.distance import squareform
 from scipy.cluster.hierarchy import linkage
 from scipy.spatial.distance import pdist
