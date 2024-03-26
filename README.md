@@ -13,22 +13,15 @@ Key parameters editable in the xml form include the list below.
 Parameter Options:
 
 	lattice_repeats: Times to replicate the system in each direction
-			
-	lattice_spacing: Lattice spacing in terms of positive particle diameter 
-			
+	lattice_spacing: Lattice spacing in terms of positive particle diameter 	
 	fraction_positive: Fraction positive charge 
-		
 	radiusN: Radius of negative colloids 
-		
 	radiusP: Radius of positive colloids
-
     debye_length: Debye length 
-             
     seed: Random seed 
-		
     yaml_file: template yaml file
-
 	output_dir: parent location of simulation outputs
+	nsteps: number of steps for simulation
 
 ## Contents
 
