@@ -30,7 +30,7 @@
         </when>
       </conditional>
   </section> 
-    <section name='Parameters' type='section' title='Simulation Parameters' expanded='true'>
+    <section name='parameters' type='section' title='Simulation Parameters' expanded='true'>
       <param name='lattice_repeats' label='lattice repeats' type='text' value='5 6' width='30%' help='lattice repeats: enter separated with space'>
       </param>
       <param name='lattice_spacing' label='lattice spacing' type='text' value='6.0 7.0 7.5' width='30%' help='lattice spacing: enter separated with space'>
