@@ -35,12 +35,30 @@ if __name__=="__main__":
     debye_length = [float(dl) for dl in str(form_inputs['parameters']['debye_length']).split()]
     seed = [int(sd) for sd in str(form_inputs['parameters']['seed']).split()]
     nsteps = [int(steps) for steps in str(form_inputs['parameters']['nsteps']).split()]
-
-    input_file = 'inputs/inputs.yaml'
+    brush_density = [int(p) for p in str(form_inputs['otherparameters']['brush_density']).split()]
+    brush_length= [int(p) for p in str(form_inputs['otherparameters']['brush_length']).split()]
+    chargewall = [int(p) for p in str(form_inputs['otherparameters']['chargewall']).split()]
+    closedwalls = [int(p) for p in str(form_inputs['otherparameters']['closedwalls']).split()]
+    dielectric_constant = [int(p) for p in str(form_inputs['otherparameters']['dielectric_constant']).split()]
+    dt = [int(p) for p in str(form_inputs['otherparameters']['dt']).split()]
+    gamma = [int(p) for p in str(form_inputs['otherparameters']['gamma']).split()]
+    gravity = [int(p) for p in str(form_inputs['otherparameters']['gravity']).split()]
+    lattice_type = [int(p) for p in str(form_inputs['otherparameters']['lattice_type']).split()]
+    massN = [int(p) for p in str(form_inputs['otherparameters']['massN']).split()]
+    massP = [int(p) for p in str(form_inputs['otherparameters']['massP']).split()]
+    mode = [int(p) for p in str(form_inputs['otherparameters']['mode']).split()]
+    orbit_factor = [int(p) for p in str(form_inputs['otherparameters']['orbit_factor']).split()]
+    surface_potentialN = [int(p) for p in str(form_inputs['otherparameters']['surface_potentialN']).split()]
+    surface_potentialP = [int(p) for p in str(form_inputs['otherparameters']['surface_potentialP']).split()]
+    temperature = [int(p) for p in str(form_inputs['otherparameters']['temperature']).split()]
     output_directory = str(form_inputs['parameters']['output_dir'])
+    input_file = 'inputs/inputs.yaml'
 
     arg_dict = {'lattice_repeats': lattice_repeats, 'lattice_spacing': lattice_spacing, 'fraction_positive':fraction_positive, 'radiusN':radiusN, 'radiusP': radiusP, \
-                'debye_length': debye_length, 'seed': seed, 'yaml_file': input_file, 'output_dir': output_directory, 'nsteps':nsteps}
+            'debye_length': debye_length, 'seed': seed, 'yaml_file': input_file, 'output_dir': output_directory, 'nsteps':nsteps, \
+            'brush_density':brush_density, 'brush_length':brush_length, 'chargewall':chargewall, 'closedwalls':closedwalls, 'dielectric_constant':dielectric_constant, \
+            'dt':dt, 'gamma':gamma, 'gravity':gravity, 'lattice_type':lattice_type, 'massN':massN, 'massP':massP, 'mode':mode, 'orbit_factor':orbit_factor, \
+            'surface_potentialN':surface_potentialN, 'surface_potentialP':surface_potentialP, 'temperature':temperature}
 
     run_dir = os.getcwd()
     output_dir = os.path.join(run_dir, output_directory)
